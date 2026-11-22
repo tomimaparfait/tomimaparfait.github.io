@@ -34,7 +34,11 @@ h1{font-size:clamp(34px,5.2vw,58px);line-height:1.08;margin:16px 0}h1 em{font-st
 .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
 .motto{margin-top:22px;font-family:Poppins;font-style:italic;color:#bcd0f5}
 .crest{position:relative;height:380px;display:grid;place-items:center}
-.crest .shield{width:230px;animation:bob 6s ease-in-out infinite;filter:drop-shadow(0 30px 40px rgba(0,0,0,.35))}
+.crest .photo{position:relative;width:100%;margin:0;animation:bob 7s ease-in-out infinite}
+.crest .photo>img:first-child{width:100%;height:auto;display:block;border-radius:24px;border:5px solid rgba(255,255,255,.9);box-shadow:0 30px 60px rgba(0,0,0,.4)}
+.crest .badge{position:absolute;left:-18px;bottom:-26px;width:92px;height:auto;border-radius:20px;background:#fff;padding:6px;box-shadow:0 14px 30px rgba(0,0,0,.3)}
+.logo img{width:46px;height:46px;border-radius:12px;object-fit:contain;background:#fff;flex-shrink:0}
+.w .ic.y{background:var(--gold-l)}.w .ic.b{background:var(--sky-l)}.w .ic.g{background:#E5F7EE}
 @keyframes bob{50%{transform:translateY(-12px)}}
 .fl{position:absolute;background:#fff;color:var(--navy);border-radius:16px;padding:10px 16px;font:600 14px Poppins;box-shadow:0 16px 34px rgba(0,0,0,.25);animation:bob 5s ease-in-out infinite;white-space:nowrap}
 .fl1{top:8%;left:0}.fl2{top:42%;right:0;animation-delay:-1.6s}.fl3{bottom:6%;left:8%;animation-delay:-3.2s}
@@ -58,10 +62,10 @@ section.s{padding:84px 0}.alt{background:#fff;border-top:1px solid var(--line);b
 .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;counter-reset:s}
 .step{background:#fff;border:1px solid var(--line);border-radius:18px;padding:24px}.step::before{counter-increment:s;content:counter(s);display:grid;place-items:center;width:42px;height:42px;border-radius:50%;background:var(--gold);color:var(--navy);font:700 18px Poppins;margin-bottom:12px}
 .step h4{margin-bottom:4px}.step p{color:var(--muted);font-size:15px}
-.gal{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:170px;gap:12px}
+.gal{display:grid;grid-template-columns:2fr 1fr;grid-auto-rows:220px;gap:12px}.g img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 30%}
 .g{border-radius:18px;position:relative;overflow:hidden;transition:transform .4s;display:grid;place-items:center;font-size:54px}.g:hover{transform:scale(1.03)}
 .g span{position:absolute;left:12px;bottom:12px;background:rgba(15,37,87,.55);backdrop-filter:blur(6px);color:#fff;padding:4px 12px;border-radius:999px;font:600 13px Nunito}
-.g1{grid-column:span 2;grid-row:span 2;background:linear-gradient(135deg,#4FA3E3,#1C3F94)}.g2{background:linear-gradient(135deg,#FFE7A3,#E2B53C)}.g3{background:linear-gradient(135deg,#B8E6CF,#2E9E6A)}.g4{grid-column:span 2;background:linear-gradient(135deg,#1C3F94,#0F2557)}
+.g1{grid-row:span 2}.g{background:var(--sky-l)}
 .gnote{text-align:center;color:var(--muted);font-size:14px;margin-top:12px}
 .enrol{display:grid;grid-template-columns:1fr 1.1fr;gap:26px;align-items:start}
 .info{display:grid;gap:12px}
@@ -86,14 +90,14 @@ footer{background:var(--navy);color:#b9c6e6;padding:54px 0 90px}
 @media(max-width:1100px) and (min-width:861px){.menu a{padding:8px 8px;font-size:14px}}
 @media(max-width:980px){.hero .wrap,.enrol,.levels{grid-template-columns:1fr}.why{grid-template-columns:1fr}.strip,.steps{grid-template-columns:1fr 1fr}.crest{height:320px}.fgrid{grid-template-columns:1fr}}
 @media(max-width:860px){.burger{display:block}.menu{position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:stretch;background:#fff;padding:12px 20px 22px;box-shadow:0 20px 30px rgba(15,37,87,.12);transform:translateY(-10px);opacity:0;visibility:hidden;transition:transform .3s,opacity .3s,visibility .3s}.menu.open{transform:none;opacity:1;visibility:visible}.menu a{padding:13px 6px;border-bottom:1px solid var(--line)}.menu a::after{display:none}.menu .btn{margin:12px 0 0}}
-@media(max-width:600px){.gal{grid-template-columns:1fr 1fr}.f2{grid-template-columns:1fr}.steps{grid-template-columns:1fr}.band{padding:26px}.fl{font-size:12px;padding:8px 12px}.crest .shield{width:180px}}
+@media(max-width:600px){.gal{grid-template-columns:1fr;grid-auto-rows:230px}.g1{grid-row:auto}.crest .badge{width:70px;left:-6px}.f2{grid-template-columns:1fr}.steps{grid-template-columns:1fr}.band{padding:26px}.fl{font-size:12px;padding:8px 12px}.crest .shield{width:180px}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
 </style>
 </head>
 <body>
 <div class="demo">Website mock-up proposed by <b>Jinhai Group Web Design</b> for Divine Christian Junior School · <a href="https://wa.me/263782252140?text=Hello%20Jinhai%20Group%2C%20I%20saw%20the%20Divine%20Christian%20Junior%20School%20website%20mock-up" target="_blank" rel="noopener">Contact us</a></div>
 <header id="hd"><div class="wrap nav">
-  <a class="logo" href="#top" aria-label="Divine Christian Junior School, home"><svg viewBox="0 0 64 64"><path d="M32 4l24 8v18c0 15-10 25-24 30C18 55 8 45 8 30V12z" fill="#1C3F94" stroke="#E2B53C" stroke-width="3"/><path d="M20 30l12-6 12 6-12 6z" fill="#E2B53C"/><path d="M25 33v6c4 3 10 3 14 0v-6" fill="none" stroke="#fff" stroke-width="2.4"/></svg><span>Divine Christian<small>Junior School · Westgate</small></span></a>
+  <a class="logo" href="#top" aria-label="Divine Christian Junior School, home"><img src="logo.jpg" alt="DCJS crest" width="46" height="46"><span>Divine Christian<small>Junior School · Westgate</small></span></a>
   <nav class="menu" id="menu"><a href="#why">Why DCJS</a><a href="#classes">Classes</a><a href="#gallery">School life</a><a href="#faq">FAQ</a><a href="#contact">Contact</a><a class="btn btn-blue" href="#enrol">Enrol for 2027</a></nav>
   <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false">☰</button>
 </div></header>
@@ -106,8 +110,8 @@ footer{background:var(--navy);color:#b9c6e6;padding:54px 0 90px}
     <div class="cta rv"><a class="btn btn-gold" href="#enrol">Enrol now for 2027</a><a class="btn btn-line" href="#classes">See our classes</a></div>
     <p class="motto rv">« Excellence dans la Dignité »</p>
   </div>
-  <div class="crest" aria-hidden="true">
-    <svg class="shield" viewBox="0 0 200 230"><defs><linearGradient id="gb" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2B57C6"/><stop offset="1" stop-color="#0F2557"/></linearGradient></defs><path d="M100 6l84 26v62c0 58-37 98-84 126C53 192 16 152 16 94V32z" fill="url(#gb)" stroke="#E2B53C" stroke-width="7"/><text x="100" y="92" font-family="Poppins,Arial" font-weight="800" font-size="40" fill="#fff" text-anchor="middle">DCJS</text><path d="M64 120l36-18 36 18-36 18z" fill="#E2B53C"/><path d="M78 128v18c12 9 32 9 44 0v-18" fill="none" stroke="#fff" stroke-width="5"/><path d="M50 170c20 14 80 14 100 0" fill="none" stroke="#E2B53C" stroke-width="5" stroke-linecap="round"/></svg>
+  <div class="crest">
+    <figure class="photo"><img src="school.jpg" alt="Divine Christian Junior School pupils in uniform in front of the school" width="702" height="469"><img class="badge" src="logo.jpg" alt="DCJS crest" width="124" height="128"></figure>
     <div class="fl fl1"><span>✦</span> Quality Education</div>
     <div class="fl fl2"><span>✝</span> Christian Values</div>
     <div class="fl fl3"><span>⚽</span> Sports & Extracurriculars</div>
@@ -127,13 +131,16 @@ footer{background:var(--navy);color:#b9c6e6;padding:54px 0 90px}
     <div class="w rv"><div class="ic">📚</div><h3>Quality Education</h3><p>Solid foundations in reading, writing, mathematics and science, with teachers who follow each child's progress.</p></div>
     <div class="w rv"><div class="ic">✝️</div><h3>Christian Values</h3><p>Faith, respect, honesty and kindness are part of daily school life, guided by our motto « Excellence dans la Dignité ».</p></div>
     <div class="w rv"><div class="ic">⚽</div><h3>Sports & Extracurriculars</h3><p>Sport, games and activities that build confidence, teamwork and healthy habits.</p></div>
+    <div class="w rv"><div class="ic b">👩‍🏫</div><h3>Qualified, Passionate Teachers</h3><p>Dedicated teachers who know every child by name and help them grow with confidence.</p></div>
+    <div class="w rv"><div class="ic y">🛡️</div><h3>Safe, Supportive Environment</h3><p>A caring and secure school where children feel at home and ready to learn.</p></div>
+    <div class="w rv"><div class="ic g">👥</div><h3>Small Classes</h3><p>Small groups and a well-rounded curriculum, so each pupil gets the attention they need.</p></div>
   </div>
 </div></section>
 
 <section class="s alt" id="classes"><div class="wrap">
   <div class="sh rv"><span class="tag">Our classes</span><h2>From the first steps to Grade 7</h2><p>One school for every stage of your child's junior education.</p></div>
   <div class="levels">
-    <div class="lv ecd rv"><h3>Early Childhood (ECD)</h3><p>A caring, playful start where children learn through songs, games, colours, letters and numbers.</p><div class="grades"><span>ECD A</span><span style="animation-delay:.1s">ECD B</span></div></div>
+    <div class="lv ecd rv"><h3>Early Childhood (ECD · ages 3–5)</h3><p>A caring, playful start where children learn through songs, games, colours, letters and numbers.</p><div class="grades"><span>ECD A</span><span style="animation-delay:.1s">ECD B</span></div></div>
     <div class="lv pri rv"><h3>Primary (Grade 1 – 7)</h3><p>A complete junior school programme that prepares pupils with confidence for Grade 7 and beyond.</p><div class="grades"><span>Grade 1</span><span style="animation-delay:.06s">Grade 2</span><span style="animation-delay:.12s">Grade 3</span><span style="animation-delay:.18s">Grade 4</span><span style="animation-delay:.24s">Grade 5</span><span style="animation-delay:.3s">Grade 6</span><span style="animation-delay:.36s">Grade 7</span></div></div>
   </div>
 </div></section>
@@ -151,9 +158,10 @@ footer{background:var(--navy);color:#b9c6e6;padding:54px 0 90px}
 <section class="s alt" id="gallery"><div class="wrap">
   <div class="sh rv"><span class="tag">School life</span><h2>Learning, faith and fun</h2></div>
   <div class="gal">
-    <div class="g g1 rv">🎒<span>Our pupils</span></div><div class="g g2 rv">📖<span>Classrooms</span></div><div class="g g3 rv">⚽<span>Sports</span></div><div class="g g4 rv">🙏<span>Assembly & devotion</span></div>
+    <div class="g g1 rv"><img src="school.jpg" alt="Pupils in front of Divine Christian Junior School" loading="lazy"><span>Our school</span></div>
+    <div class="g g2 rv"><img src="pupils2.jpg" alt="DCJS pupils in school blazers" loading="lazy"><span>Our pupils</span></div>
+    <div class="g g3 rv"><img src="pupils.jpg" alt="DCJS pupils in winter and summer uniform" loading="lazy"><span>School uniform</span></div>
   </div>
-  <p class="gnote rv">In the final website, these tiles show the school's own photos.</p>
 </div></section>
 
 <section class="s" id="enrol"><div class="wrap enrol">
@@ -194,7 +202,7 @@ footer{background:var(--navy);color:#b9c6e6;padding:54px 0 90px}
 
 <footer><div class="wrap">
   <div class="fgrid">
-    <div><a class="logo" href="#top"><svg viewBox="0 0 64 64" style="width:40px;height:40px"><path d="M32 4l24 8v18c0 15-10 25-24 30C18 55 8 45 8 30V12z" fill="#1C3F94" stroke="#E2B53C" stroke-width="3"/><path d="M20 30l12-6 12 6-12 6z" fill="#E2B53C"/></svg><span>Divine Christian<small>Junior School</small></span></a><p>Nurturing excellence with integrity and faith. ECD to Grade 7, Goodhope Westgate, Harare.</p></div>
+    <div><a class="logo" href="#top"><img src="logo.jpg" alt="DCJS crest" width="46" height="46"><span>Divine Christian<small>Junior School</small></span></a><p>Nurturing excellence with integrity and faith. ECD to Grade 7, Goodhope Westgate, Harare.</p></div>
     <div><h4>School</h4><ul><li><a href="#why">Why DCJS</a></li><li><a href="#classes">Classes</a></li><li><a href="#enrol">Enrolment 2027</a></li><li><a href="#faq">FAQ</a></li></ul></div>
     <div><h4>Contact</h4><ul><li>+263 77 238 0530</li><li>+263 71 938 0530</li><li>+263 77 469 4353</li><li style="word-break:break-all">skaseke37@gmail.com</li></ul></div>
   </div>
