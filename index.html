@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Jinhai Web Design – Website Demos</title>
+<meta name="description" content="See example websites by Jinhai Group Web Design: restaurant, school and online shop. Fast, mobile-first websites for small businesses from $40.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><circle cx='32' cy='32' r='30' fill='%230B1B3A' stroke='%23D4A72C' stroke-width='4'/><path d='M14 36c6-8 12-8 18 0s12 8 18 0' fill='none' stroke='%23F0C75A' stroke-width='5' stroke-linecap='round'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;800&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0B1B3A;--navy2:#12284F;--gold:#D4A72C;--gold2:#F0C75A;--ink:#0d1526;--muted:#5b6478;--bg:#f6f4ee;--card:#fff}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+body{font-family:Inter,system-ui,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1140px;margin:0 auto;padding:0 20px}
+header{position:sticky;top:0;z-index:50;background:rgba(11,27,58,.92);backdrop-filter:blur(10px);transition:box-shadow .3s}
+header.shrink{box-shadow:0 8px 24px rgba(0,0,0,.25)}
+.nav{height:72px;display:flex;align-items:center;justify-content:space-between;transition:height .3s}
+header.shrink .nav{height:58px}
+.logo{display:flex;align-items:center;gap:10px;color:var(--gold2);font-family:Fraunces,serif;font-weight:800;letter-spacing:.5px}
+.logo svg{width:34px;height:34px}
+.menu{display:flex;gap:26px;color:#dfe6f5;font-weight:600;font-size:15px}
+.menu a{position:relative;white-space:nowrap}.menu a::after{content:"";position:absolute;left:0;bottom:-4px;height:2px;width:0;background:var(--gold2);transition:width .25s}.menu a:hover::after{width:100%}
+.cta{background:var(--gold);color:var(--navy);padding:10px 18px;border-radius:999px;font-weight:800;white-space:nowrap}
+.burger{display:none;background:none;border:0;color:#fff;font-size:28px;cursor:pointer}
+.hero{background:radial-gradient(circle at 80% 20%,#1d3a70,var(--navy) 60%);color:#fff;padding:90px 0 110px;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:-20%;background:radial-gradient(circle at 20% 80%,rgba(212,167,44,.18),transparent 40%);animation:drift 12s ease-in-out infinite alternate}
+@keyframes drift{to{transform:translate(4%,-4%) scale(1.08)}}
+.hero .wrap{position:relative;display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+.tag{display:inline-block;background:rgba(240,199,90,.15);color:var(--gold2);border:1px solid rgba(240,199,90,.4);padding:6px 14px;border-radius:999px;font-size:13px;font-weight:700;margin-bottom:18px}
+h1{font-family:Fraunces,serif;font-size:clamp(34px,5vw,58px);line-height:1.08;margin-bottom:18px}
+h1 em{color:var(--gold2);font-style:normal}
+.hero p{color:#c9d3e8;font-size:18px;max-width:520px;margin-bottom:28px}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn{padding:14px 24px;border-radius:999px;font-weight:800;display:inline-flex;align-items:center;gap:8px;transition:transform .2s,box-shadow .2s}
+.btn:hover{transform:translateY(-3px)}
+.btn.gold{background:var(--gold);color:var(--navy);box-shadow:0 10px 30px rgba(212,167,44,.35)}
+.btn.ghost{border:2px solid rgba(255,255,255,.35);color:#fff}
+.stack{position:relative;height:380px}
+.mock{position:absolute;width:62%;border-radius:16px;overflow:hidden;box-shadow:0 30px 60px rgba(0,0,0,.45);background:#fff;animation:bob 6s ease-in-out infinite}
+.mock .bar{height:22px;background:#e8ecf2;display:flex;gap:5px;align-items:center;padding:0 8px}.mock .bar i{width:8px;height:8px;border-radius:50%;background:#ff5f57}.mock .bar i:nth-child(2){background:#febc2e}.mock .bar i:nth-child(3){background:#28c840}
+.mock .scr{height:190px}
+.m1{left:0;top:30px}.m1 .scr{background:linear-gradient(160deg,#14100c 40%,#e8743b)}
+.m2{right:0;top:0;animation-delay:-2s}.m2 .scr{background:linear-gradient(160deg,#1e4e8c 40%,#7fc4ff)}
+.m3{left:22%;bottom:0;animation-delay:-4s}.m3 .scr{background:linear-gradient(160deg,#fbf7f1 30%,#c4622d)}
+.mock .scr b{display:block;margin:24px 18px 8px;height:14px;width:60%;border-radius:8px;background:rgba(255,255,255,.85)}.mock .scr b+b{width:40%;height:10px;margin-top:0;opacity:.7}
+@keyframes bob{50%{transform:translateY(-10px)}}
+section{padding:80px 0}
+.h2{font-family:Fraunces,serif;font-size:clamp(28px,3.4vw,40px);margin-bottom:10px;text-align:center}
+.sub{color:var(--muted);text-align:center;max-width:620px;margin:0 auto 44px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:-60px;position:relative;z-index:2}
+.stat{background:var(--card);border-radius:18px;padding:22px;text-align:center;box-shadow:0 14px 40px rgba(11,27,58,.12)}
+.stat b{display:block;font-size:32px;color:var(--navy);font-family:Fraunces,serif}.stat span{color:var(--muted);font-size:14px}
+.demos{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.demo{background:var(--card);border-radius:22px;overflow:hidden;box-shadow:0 10px 30px rgba(11,27,58,.08);transition:transform .3s,box-shadow .3s;display:flex;flex-direction:column;border:2px solid transparent}
+.demo:hover{transform:translateY(-6px);box-shadow:0 22px 50px rgba(11,27,58,.18);border-color:var(--gold)}
+.thumb{height:200px;position:relative;display:flex;align-items:flex-end;padding:18px;color:#fff;font-family:Fraunces,serif;font-size:26px;font-weight:800}
+.thumb small{position:absolute;top:14px;left:14px;font:700 12px Inter;background:rgba(0,0,0,.35);padding:5px 10px;border-radius:999px;backdrop-filter:blur(6px)}
+.t1{background:radial-gradient(circle at 70% 30%,#f4a259,#14100c 70%)}.t2{background:radial-gradient(circle at 70% 30%,#7fc4ff,#1e4e8c 70%)}.t3{background:radial-gradient(circle at 70% 30%,#f7c9b6,#7a3e5a 70%)}
+.demo .body{padding:22px;flex:1;display:flex;flex-direction:column}
+.demo p{color:var(--muted);font-size:15px;margin-bottom:14px;flex:1}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:18px}.chips span{font-size:12px;background:#f1ede2;color:#6b5a24;padding:4px 10px;border-radius:999px;font-weight:600}
+.demo .btn{justify-content:center;background:var(--navy);color:#fff}
+.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;align-items:stretch}
+.plan{background:var(--card);border-radius:22px;padding:30px;box-shadow:0 10px 30px rgba(11,27,58,.08);display:flex;flex-direction:column;position:relative;transition:transform .3s}
+.plan:hover{transform:translateY(-6px)}
+.plan.pop{border:3px solid var(--gold);box-shadow:0 24px 60px rgba(212,167,44,.25)}
+.badge{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:var(--gold);color:var(--navy);font-weight:800;font-size:12px;padding:6px 14px;border-radius:999px;white-space:nowrap}
+.plan h3{font-family:Fraunces,serif;font-size:22px}
+.price{font-size:44px;font-weight:800;color:var(--navy);margin:10px 0 0}.price s{font-size:18px;color:#9aa1b2;margin-left:8px;font-weight:600}
+.days{color:var(--muted);font-size:14px;margin-bottom:16px}
+.plan ul{list-style:none;margin-bottom:22px;flex:1}.plan li{padding:7px 0 7px 28px;position:relative;font-size:15px}.plan li::before{content:"✓";position:absolute;left:0;color:#2e7d32;font-weight:800}
+.plan .btn{justify-content:center;background:var(--navy);color:#fff}.plan.pop .btn{background:var(--gold);color:var(--navy)}
+.note{text-align:center;color:var(--muted);font-size:14px;margin-top:22px}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.step{background:var(--card);border-radius:18px;padding:24px;text-align:center}
+.step i{display:grid;place-items:center;width:52px;height:52px;margin:0 auto 12px;border-radius:50%;background:var(--navy);color:var(--gold2);font-style:normal;font-weight:800;font-size:20px}
+.step h4{margin-bottom:6px}.step p{color:var(--muted);font-size:14px}
+.contact{background:var(--navy);color:#fff;text-align:center;border-radius:28px;padding:56px 24px}
+.contact h2{font-family:Fraunces,serif;font-size:clamp(28px,3.4vw,40px);margin-bottom:10px}.contact p{color:#c9d3e8;margin-bottom:26px}
+footer{text-align:center;color:var(--muted);font-size:14px;padding:30px 0 90px}
+footer a{color:var(--navy);font-weight:700}
+.wa{position:fixed;right:18px;bottom:18px;width:60px;height:60px;border-radius:50%;background:#25d366;display:grid;place-items:center;box-shadow:0 10px 30px rgba(37,211,102,.5);z-index:60}
+.wa::before{content:"";position:absolute;inset:0;border-radius:50%;border:3px solid #25d366;animation:pulse 2s infinite}
+@keyframes pulse{to{transform:scale(1.6);opacity:0}}
+.wa svg{width:32px;height:32px;fill:#fff}
+.rv{opacity:0;transform:translateY(34px);transition:opacity .8s,transform .8s cubic-bezier(.2,.8,.2,1)}.rv.in{opacity:1;transform:none}
+@media(max-width:960px){.hero .wrap{grid-template-columns:1fr}.stack{height:300px;max-width:460px}.demos,.plans{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,1fr)}.steps{grid-template-columns:repeat(2,1fr)}.plan.pop{margin-top:10px}}
+@media(max-width:860px){.burger{display:block}.menu{position:fixed;top:58px;left:0;right:0;flex-direction:column;background:var(--navy);padding:22px;gap:18px;transform:translateY(-110%);visibility:hidden;transition:transform .35s,visibility .35s}.menu.open{transform:none;visibility:visible}.nav .cta{display:none}}
+@media(max-width:480px){.hero{padding:60px 0 90px}.steps{grid-template-columns:1fr}.stat b{font-size:26px}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<header id="hd"><div class="wrap nav">
+  <a class="logo" href="#top"><svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="29" fill="none" stroke="#D4A72C" stroke-width="4"/><path d="M14 36c6-8 12-8 18 0s12 8 18 0" fill="none" stroke="#F0C75A" stroke-width="5" stroke-linecap="round"/></svg>JINHAI WEB DESIGN</a>
+  <nav class="menu" id="menu"><a href="#demos">Demos</a><a href="#prices">Prices</a><a href="#how">How it works</a><a href="#contact">Contact</a></nav>
+  <a class="cta" href="https://wa.me/263782252140?text=Hello%20Jinhai%20Group%2C%20I%20would%20like%20a%20website" target="_blank" rel="noopener">Get my website</a>
+  <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false">☰</button>
+</div></header>
+
+<section class="hero" id="top"><div class="wrap">
+  <div>
+    <span class="tag">-50% on all websites</span>
+    <h1>Websites that bring <em>new customers</em> to your business</h1>
+    <p>Fast, modern and mobile-first websites for restaurants, schools, shops, guest houses and every small business. Domain name and hosting included for the first year.</p>
+    <div class="btns"><a class="btn gold" href="#demos">See the demos ↓</a><a class="btn ghost" href="#prices">View prices</a></div>
+  </div>
+  <div class="stack" aria-hidden="true">
+    <div class="mock m1"><div class="bar"><i></i><i></i><i></i></div><div class="scr"><b></b><b></b></div></div>
+    <div class="mock m2"><div class="bar"><i></i><i></i><i></i></div><div class="scr"><b></b><b></b></div></div>
+    <div class="mock m3"><div class="bar"><i></i><i></i><i></i></div><div class="scr"><b></b><b></b></div></div>
+  </div>
+</div></section>
+
+<div class="wrap"><div class="stats">
+  <div class="stat rv"><b data-count="2">0</b><span>days for a showcase site</span></div>
+  <div class="stat rv"><b data-count="100" data-suf="%">0</b><span>mobile-friendly</span></div>
+  <div class="stat rv"><b data-count="40" data-pre="$">0</b><span>starting price</span></div>
+  <div class="stat rv"><b data-count="1" data-suf=" yr">0</b><span>domain + hosting included</span></div>
+</div></div>
+
+<section id="demos"><div class="wrap">
+  <h2 class="h2 rv">Example websites</h2>
+  <p class="sub rv">Click a demo to see what your website could look like. These are fictional businesses created to show our work.</p>
+  <div class="demos">
+    <a class="demo rv" href="restaurant.html"><div class="thumb t1"><small>Restaurant</small>Ember Grill</div><div class="body"><p>Animated hero, menu with tabs, table booking and WhatsApp orders.</p><div class="chips"><span>Menu tabs</span><span>Booking</span><span>Gallery</span></div><span class="btn">Open demo →</span></div></a>
+    <a class="demo rv" href="school.html"><div class="thumb t2"><small>School / Training centre</small>BrightPath Academy</div><div class="body"><p>Courses, fees, enrolment form, student numbers and FAQ for parents.</p><div class="chips"><span>Courses</span><span>Enrolment</span><span>FAQ</span></div><span class="btn">Open demo →</span></div></a>
+    <a class="demo rv" href="shop.html"><div class="thumb t3"><small>Online shop</small>Maya Home Store</div><div class="body"><p>Product catalogue with categories, cart and order on WhatsApp with delivery.</p><div class="chips"><span>Catalogue</span><span>Cart</span><span>Delivery</span></div><span class="btn">Open demo →</span></div></a>
+  </div>
+</div></section>
+
+<section id="prices" style="background:#efebe0"><div class="wrap">
+  <h2 class="h2 rv">Simple prices</h2>
+  <p class="sub rv">One-time payment. Domain name and hosting included for the first year. Pay in USDT, or EcoCash in Zimbabwe.</p>
+  <div class="plans">
+    <div class="plan rv"><h3>Showcase website</h3><div class="price">$40<s>$80</s></div><div class="days">Ready in 2 days</div><ul><li>Modern one-page website</li><li>Mobile-first design</li><li>WhatsApp button</li><li>Google Maps location</li><li>Domain + hosting (1st year)</li></ul><a class="btn" href="https://wa.me/263782252140?text=Hello%2C%20I%20want%20the%20Showcase%20website" target="_blank" rel="noopener">Choose</a></div>
+    <div class="plan pop rv"><span class="badge">Most popular</span><h3>Business website</h3><div class="price">$90<s>$180</s></div><div class="days">Ready in 5 days</div><ul><li>Everything in Showcase</li><li>Services, gallery and reviews</li><li>Contact / booking form</li><li>Animations and FAQ</li><li>Visible on Google</li></ul><a class="btn" href="https://wa.me/263782252140?text=Hello%2C%20I%20want%20the%20Business%20website" target="_blank" rel="noopener">Choose</a></div>
+    <div class="plan rv"><h3>Premium website</h3><div class="price">$150<s>$300</s></div><div class="days">Ready in 10 days</div><ul><li>Everything in Business</li><li>English + French</li><li>Catalogue or online menu</li><li>Advanced animations</li><li>Priority support</li></ul><a class="btn" href="https://wa.me/263782252140?text=Hello%2C%20I%20want%20the%20Premium%20website" target="_blank" rel="noopener">Choose</a></div>
+  </div>
+  <p class="note rv">Changes after launch: $15 to $25 per update. Full details on <a href="https://jinhaigrp.com/web-design" style="color:var(--navy);font-weight:700">jinhaigrp.com/web-design</a></p>
+</div></section>
+
+<section id="how"><div class="wrap">
+  <h2 class="h2 rv">How it works</h2>
+  <p class="sub rv">From your first message to your website online, in a few days.</p>
+  <div class="steps">
+    <div class="step rv"><i>1</i><h4>Message us</h4><p>Tell us about your business on WhatsApp or by email.</p></div>
+    <div class="step rv"><i>2</i><h4>Free mock-up</h4><p>We send you a free design of your website.</p></div>
+    <div class="step rv"><i>3</i><h4>We build it</h4><p>Your website is ready in 2 to 10 days.</p></div>
+    <div class="step rv"><i>4</i><h4>You're online</h4><p>Customers find you on Google and contact you.</p></div>
+  </div>
+</div></section>
+
+<section id="contact" style="padding-top:0"><div class="wrap"><div class="contact rv">
+  <h2>Ready for your website?</h2>
+  <p>Ask for your free mock-up today. We reply by WhatsApp or email.</p>
+  <div class="btns" style="justify-content:center"><a class="btn gold" href="https://wa.me/263782252140?text=Hello%20Jinhai%20Group%2C%20I%20would%20like%20a%20free%20website%20mock-up" target="_blank" rel="noopener">WhatsApp +263 78 225 2140</a><a class="btn ghost" href="mailto:contact@jinhaigrp.com">contact@jinhaigrp.com</a></div>
+</div></div></section>
+
+<footer>© <span id="yr"></span> Jinhai Group · <a href="https://jinhaigrp.com">jinhaigrp.com</a> · Demo businesses on this page are fictional.</footer>
+<a class="wa" href="https://wa.me/263782252140?text=Hello%20Jinhai%20Group%2C%20I%20would%20like%20a%20website" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><svg viewBox="0 0 32 32"><path d="M16 3a13 13 0 0 0-11.2 19.6L3 29l6.6-1.7A13 13 0 1 0 16 3zm0 23.6c-2 0-4-.6-5.7-1.6l-.4-.2-3.9 1 1-3.8-.3-.4A10.6 10.6 0 1 1 16 26.6zm5.8-7.9c-.3-.2-1.9-.9-2.2-1s-.5-.2-.7.2-.8 1-1 1.2-.4.2-.7 0a8.7 8.7 0 0 1-4.3-3.8c-.3-.6.3-.5 1-1.7.1-.2 0-.4 0-.6l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6a1.2 1.2 0 0 0-.9.4 3.6 3.6 0 0 0-1.1 2.7 6.3 6.3 0 0 0 1.3 3.3 14.4 14.4 0 0 0 5.5 4.9c2 .9 2.8.9 3.8.8.6-.1 1.9-.8 2.2-1.5s.3-1.3.2-1.5-.3-.2-.6-.4z"/></svg></a>
+<script>
+const h=document.getElementById('hd');addEventListener('scroll',()=>h.classList.toggle('shrink',scrollY>30));
+const b=document.getElementById('burger'),m=document.getElementById('menu');b.onclick=()=>{const o=m.classList.toggle('open');b.setAttribute('aria-expanded',o)};m.querySelectorAll('a').forEach(a=>a.onclick=()=>{m.classList.remove('open');b.setAttribute('aria-expanded',false)});
+document.getElementById('yr').textContent=new Date().getFullYear();
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){const s=[...e.target.parentNode.children].filter(c=>c.classList.contains('rv'));e.target.style.transitionDelay=(s.indexOf(e.target)%4*90)+'ms';e.target.classList.add('in');const c=e.target.querySelector('[data-count]');if(c)count(c);io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.rv').forEach(e=>io.observe(e));
+function count(el){const n=+el.dataset.count,p=el.dataset.pre||'',s=el.dataset.suf||'',t0=performance.now();(function f(t){const k=Math.min(1,(t-t0)/1400),v=Math.round(n*(1-Math.pow(1-k,3)));el.textContent=p+v+s;if(k<1)requestAnimationFrame(f)})(t0)}
+</script>
+</body>
+</html>

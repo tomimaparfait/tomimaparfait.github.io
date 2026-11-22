@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ember Grill – Restaurant website demo</title>
+<meta name="description" content="Restaurant website demo by Jinhai Web Design: menu with tabs, table booking and WhatsApp orders. Fictional business.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><text y='52' font-size='52'>🔥</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#14100c;--bg2:#1f1812;--ember:#e8743b;--ember2:#f4a259;--leaf:#7fa36b;--cream:#f6eee4;--muted:#b9a995}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+body{font-family:Inter,sans-serif;background:var(--bg);color:var(--cream);line-height:1.6;overflow-x:hidden}a{color:inherit;text-decoration:none}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+.demo-bar{background:#D4A72C;color:#0B1B3A;text-align:center;font-size:13px;font-weight:700;padding:7px 12px}.demo-bar a{text-decoration:underline}
+header{position:sticky;top:0;z-index:50;background:rgba(20,16,12,.88);backdrop-filter:blur(10px);transition:box-shadow .3s}header.shrink{box-shadow:0 8px 24px rgba(0,0,0,.5)}
+.nav{height:70px;display:flex;align-items:center;justify-content:space-between;transition:height .3s}header.shrink .nav{height:58px}
+.logo{font-family:'Playfair Display',serif;font-size:26px;font-weight:800;color:var(--ember2)}
+.menu{display:flex;gap:26px;font-weight:600}.menu a{position:relative;white-space:nowrap}.menu a::after{content:"";position:absolute;left:0;bottom:-4px;height:2px;width:0;background:var(--ember);transition:width .25s}.menu a:hover::after{width:100%}
+.cta{background:var(--ember);color:#fff;padding:10px 18px;border-radius:999px;font-weight:800;white-space:nowrap}
+.burger{display:none;background:none;border:0;color:#fff;font-size:28px}
+.hero{min-height:84vh;display:grid;place-items:center;text-align:center;position:relative;overflow:hidden;background:radial-gradient(circle at 50% 120%,#7a2e10,var(--bg) 60%)}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(40px,7vw,84px);line-height:1.05;margin-bottom:16px}.hero h1 em{color:var(--ember2);font-style:normal}
+.hero p{color:var(--muted);font-size:19px;max-width:560px;margin:0 auto 30px}
+.btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn{padding:14px 26px;border-radius:999px;font-weight:800;transition:transform .2s}.btn:hover{transform:translateY(-3px)}.btn.fire{background:var(--ember);color:#fff;box-shadow:0 10px 30px rgba(232,116,59,.45)}.btn.line{border:2px solid rgba(246,238,228,.4)}
+.spark{position:absolute;bottom:-10px;width:6px;height:6px;border-radius:50%;background:var(--ember2);box-shadow:0 0 10px var(--ember);animation:rise linear infinite;opacity:0}
+@keyframes rise{0%{transform:translateY(0);opacity:0}10%{opacity:1}100%{transform:translateY(-90vh) translateX(30px);opacity:0}}
+section{padding:80px 0}.h2{font-family:'Playfair Display',serif;font-size:clamp(30px,4vw,44px);text-align:center;margin-bottom:8px}.sub{text-align:center;color:var(--muted);margin-bottom:40px}
+.feat{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.f{background:var(--bg2);border:1px solid #2e241b;border-radius:20px;padding:28px;transition:transform .3s,border-color .3s}.f:hover{transform:translateY(-6px);border-color:var(--ember)}.f span{font-size:36px;display:inline-block;transition:transform .3s}.f:hover span{transform:rotate(-10deg) scale(1.1)}.f h3{margin:10px 0 6px}.f p{color:var(--muted);font-size:15px}
+.tabs{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:28px}.tabs button{background:var(--bg2);color:var(--cream);border:1px solid #3a2d22;padding:10px 20px;border-radius:999px;font-weight:700;cursor:pointer;font-family:inherit}.tabs button.on{background:var(--ember);border-color:var(--ember);color:#fff}
+.menu-list{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.item{display:flex;justify-content:space-between;gap:14px;background:var(--bg2);padding:18px 20px;border-radius:16px;animation:fadeUp .5s both}.item b{display:block}.item small{color:var(--muted)}.item .p{color:var(--ember2);font-weight:800;white-space:nowrap}
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}}
+.gal{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:170px;gap:12px}.g{border-radius:16px;overflow:hidden;position:relative;transition:transform .4s}.g:hover{transform:scale(1.03)}.g span{position:absolute;left:10px;bottom:10px;background:rgba(0,0,0,.45);backdrop-filter:blur(6px);padding:4px 12px;border-radius:999px;font-size:13px}
+.g1{grid-column:span 2;grid-row:span 2;background:radial-gradient(circle at 30% 30%,#f4a259,#7a2e10)}.g2{background:radial-gradient(circle,#7fa36b,#2b3a22)}.g3{background:radial-gradient(circle,#e8743b,#3b1a0c)}.g4{grid-column:span 2;background:linear-gradient(120deg,#3b2a1c,#c96b2c)}
+.book{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center}
+form{background:var(--bg2);padding:28px;border-radius:22px;display:grid;gap:12px}
+input,select{width:100%;padding:13px 14px;border-radius:12px;border:1px solid #3a2d22;background:#120e0a;color:var(--cream);font:inherit}
+form button{border:0;cursor:pointer;font:inherit}
+.ok{display:none;color:var(--leaf);font-weight:700}
+details{background:var(--bg2);border-radius:14px;padding:16px 20px;margin-bottom:10px}summary{cursor:pointer;font-weight:700;list-style:none;display:flex;justify-content:space-between}summary::after{content:"+";transition:transform .3s;color:var(--ember2);font-size:22px}details[open] summary::after{transform:rotate(45deg)}details p{color:var(--muted);margin-top:8px}
+footer{text-align:center;color:var(--muted);padding:30px 20px 90px;font-size:14px}
+.wa{position:fixed;right:18px;bottom:18px;width:60px;height:60px;border-radius:50%;background:#25d366;display:grid;place-items:center;z-index:60;box-shadow:0 10px 30px rgba(37,211,102,.5);font-size:30px}.wa::before{content:"";position:absolute;inset:0;border-radius:50%;border:3px solid #25d366;animation:pulse 2s infinite}@keyframes pulse{to{transform:scale(1.6);opacity:0}}
+.rv{opacity:0;transform:translateY(34px);transition:opacity .8s,transform .8s cubic-bezier(.2,.8,.2,1)}.rv.in{opacity:1;transform:none}
+@media(max-width:860px){.burger{display:block}.menu{position:fixed;top:58px;left:0;right:0;flex-direction:column;background:var(--bg);padding:22px;transform:translateY(-110%);visibility:hidden;transition:transform .35s,visibility .35s}.menu.open{transform:none;visibility:visible}.nav .cta{display:none}.feat,.book,.menu-list{grid-template-columns:1fr}.gal{grid-template-columns:repeat(2,1fr)}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div class="demo-bar">DEMO – fictional restaurant made by <a href="index.html">Jinhai Web Design</a>. Want this for your business? <a href="https://wa.me/263782252140?text=Hello%2C%20I%20want%20a%20restaurant%20website%20like%20the%20Ember%20Grill%20demo" target="_blank" rel="noopener">Message us</a></div>
+<header id="hd"><div class="wrap nav"><a class="logo" href="#top">Ember Grill</a>
+<nav class="menu" id="menu"><a href="#menu-sec">Menu</a><a href="#gallery">Gallery</a><a href="#book">Book a table</a><a href="#faq">FAQ</a></nav>
+<a class="cta" href="#book">Book a table</a><button class="burger" id="burger" aria-label="Open menu" aria-expanded="false">☰</button></div></header>
+<section class="hero" id="top"><div class="wrap"><h1 class="rv">Flame-grilled <em>flavours</em><br>every evening</h1><p class="rv">Fresh meat, grilled fish and homemade sauces in the heart of the city. Eat in, take away or order on WhatsApp.</p><div class="btns rv"><a class="btn fire" href="#book">Book a table</a><a class="btn line" href="#menu-sec">See the menu</a></div></div></section>
+<section><div class="wrap"><h2 class="h2 rv">Why our guests come back</h2><p class="sub rv">Example content for the demo</p><div class="feat">
+<div class="f rv"><span>🔥</span><h3>Real charcoal grill</h3><p>Every dish is cooked to order over a live fire.</p></div>
+<div class="f rv"><span>🥗</span><h3>Fresh every day</h3><p>Local vegetables and meat bought every morning.</p></div>
+<div class="f rv"><span>🛵</span><h3>Delivery in town</h3><p>Order on WhatsApp and get your meal hot at home.</p></div></div></div></section>
+<section id="menu-sec" style="background:#181310"><div class="wrap"><h2 class="h2 rv">Our menu</h2><p class="sub rv">Prices shown as an example</p>
+<div class="tabs" id="tabs"></div><div class="menu-list" id="list"></div></div></section>
+<section id="gallery"><div class="wrap"><h2 class="h2 rv">Gallery</h2><p class="sub rv">Your real photos go here</p><div class="gal">
+<div class="g g1 rv"><span>The grill</span></div><div class="g g2 rv"><span>Salads</span></div><div class="g g3 rv"><span>Steaks</span></div><div class="g g4 rv"><span>Our terrace</span></div></div></div></section>
+<section id="book" style="background:#181310"><div class="wrap book"><div class="rv"><h2 class="h2" style="text-align:left">Book your table</h2><p style="color:var(--muted)">Open every day from 11:00 to 23:00. Choose a date and we confirm on WhatsApp.</p></div>
+<form class="rv" id="f"><input required placeholder="Your name"><input required type="tel" placeholder="Phone / WhatsApp"><input required type="date"><select><option>2 people</option><option>4 people</option><option>6+ people</option></select><button class="btn fire" type="submit">Book now</button><p class="ok" id="ok">✓ Demo only – in a real site, your booking would be sent to the restaurant.</p></form></div></section>
+<section id="faq"><div class="wrap" style="max-width:760px"><h2 class="h2 rv">FAQ</h2><p class="sub rv">&nbsp;</p>
+<details class="rv"><summary>Do you deliver?</summary><p>Yes, in town. Order on WhatsApp and pay on delivery.</p></details>
+<details class="rv"><summary>Do you have vegetarian dishes?</summary><p>Yes, grilled vegetables, salads and sides.</p></details>
+<details class="rv"><summary>Can I book for a group?</summary><p>Of course, choose "6+ people" in the booking form.</p></details></div></section>
+<footer>Ember Grill is a fictional business · Website demo by <a href="index.html" style="color:var(--ember2)">Jinhai Web Design</a></footer>
+<a class="wa" href="https://wa.me/263782252140?text=Hello%2C%20I%20want%20a%20restaurant%20website" target="_blank" rel="noopener" aria-label="WhatsApp">💬</a>
+<script>
+const h=document.getElementById('hd');addEventListener('scroll',()=>h.classList.toggle('shrink',scrollY>30));
+const b=document.getElementById('burger'),m=document.getElementById('menu');b.onclick=()=>{const o=m.classList.toggle('open');b.setAttribute('aria-expanded',o)};m.querySelectorAll('a').forEach(a=>a.onclick=()=>m.classList.remove('open'));
+const hero=document.querySelector('.hero');for(let i=0;i<24;i++){const s=document.createElement('i');s.className='spark';s.style.left=Math.random()*100+'%';s.style.animationDuration=4+Math.random()*5+'s';s.style.animationDelay=-Math.random()*8+'s';hero.appendChild(s)}
+const M={Grill:[['Ember mixed grill','Beef, chicken, sausage, 2 sides','$14'],['Chicken quarter','Marinated, chips or rice','$7'],['T-bone steak','400 g, pepper sauce','$16'],['Grilled bream','Lemon butter, salad','$12']],Starters:[['Chicken wings','Spicy honey glaze','$5'],['Garden salad','Fresh greens, avocado','$4'],['Soup of the day','Ask the waiter','$3'],['Beef samosas','3 pieces, chilli dip','$4']],Drinks:[['Fresh juice','Mango, orange or pineapple','$2'],['Soft drink','Can','$1.5'],['Iced tea','Homemade','$2'],['Coffee','Espresso or latte','$2']]};
+const tabs=document.getElementById('tabs'),list=document.getElementById('list');
+function show(k){[...tabs.children].forEach(x=>x.classList.toggle('on',x.textContent===k));list.innerHTML=M[k].map((it,i)=>`<div class="item" style="animation-delay:${i*60}ms"><div><b>${it[0]}</b><small>${it[1]}</small></div><span class="p">${it[2]}</span></div>`).join('')}
+Object.keys(M).forEach(k=>{const bt=document.createElement('button');bt.textContent=k;bt.onclick=()=>show(k);tabs.appendChild(bt)});show('Grill');
+document.getElementById('f').onsubmit=e=>{e.preventDefault();document.getElementById('ok').style.display='block'};
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){const s=[...e.target.parentNode.children].filter(c=>c.classList.contains('rv'));e.target.style.transitionDelay=(s.indexOf(e.target)%4*90)+'ms';e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});document.querySelectorAll('.rv').forEach(e=>io.observe(e));
+</script>
+</body></html>
